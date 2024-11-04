@@ -21,6 +21,7 @@ const PORT = process.env.PORT || 2004;
 app.use(express.static("public"));
 const path = require("path");
 const { homedir } = require("os");
+app.set('views', __dirname + '/views');
 legoData.initialize().then(() => {
   app.use(express.static(path.join(__dirname, "/public")));
 
